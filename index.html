@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山西永鑫能源集团有限公司 - 2026年奖补项目申报清单</title>
+    <style>
+        :root {
+            --primary: #1a3a5c;
+            --primary-light: #2d5f8a;
+            --accent: #e8943a;
+            --accent-light: #f5b971;
+            --bg: #f4f6f9;
+            --card-bg: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c7a89;
+            --border: #dce3ec;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --info: #3498db;
+            --danger: #e74c3c;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        /* ===== Header (Sticky) ===== */
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .header h1 span {
+            color: var(--accent-light);
+            font-weight: 400;
+            font-size: 16px;
+            margin-left: 12px;
+        }
+        .header-meta {
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        /* ===== Navigation (V2 order) ===== */
+        .nav {
+            background: var(--primary);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+        }
+        .nav a {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: all 0.2s;
+            border-bottom: 3px solid transparent;
+        }
+        .nav a:hover, .nav a.active {
+            color: white;
+            background: rgba(255,255,255,0.05);
+            border-bottom-color: var(--accent);
+        }
+
+        /* ===== Container ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 30px 40px 60px;
+        }
+
+        /* ===== Section ===== */
+        .section {
+            margin-bottom: 40px;
+            scroll-margin-top: 120px;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title .icon {
+            width: 32px;
+            height: 32px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* ===== Card ===== */
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 28px 32px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            font-size: 17px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .card p {
+            color: var(--text);
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        /* ===== Info Grid ===== */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .info-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 22px 26px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+        }
+        .info-item .label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        .info-item .value {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* ===== Badge ===== */
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .badge-national {
+            background: linear-gradient(135deg, #e74c3c22, #e74c3c11);
+            color: #c0392b;
+            border: 1px solid #e74c3c44;
+        }
+        .badge-province {
+            background: linear-gradient(135deg, #3498db22, #3498db11);
+            color: #2471a3;
+            border: 1px solid #3498db44;
+        }
+        .badge-city {
+            background: linear-gradient(135deg, #27ae6022, #27ae6011);
+            color: #1e8449;
+            border: 1px solid #27ae6044;
+        }
+        .badge-other {
+            background: linear-gradient(135deg, #8e44ad22, #8e44ad11);
+            color: #6c3483;
+            border: 1px solid #8e44ad44;
+        }
+
+        /* ===== Business Cards Grid ===== */
+        .biz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+        .biz-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .biz-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        }
+        .biz-card .biz-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+        .biz-card h4 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .biz-card p {
+            font-size: 13px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* ===== Table ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            background: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            min-width: 1600px;
+        }
+        thead th {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        tbody td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+        }
+        tbody tr:hover {
+            background: #f0f5ff;
+        }
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+        .level-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .level-national { background: #fde8e8; color: #c0392b; }
+        .level-province { background: #e8f0fe; color: #2471a3; }
+        .level-city { background: #e8f8e8; color: #1e8449; }
+        .level-district { background: #f3e8fd; color: #6c3483; }
+        .amount {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 15px;
+        }
+        .category-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            background: #f0f0f0;
+            color: #555;
+        }
+
+        /* ===== Tech Tags ===== */
+        .tech-tag {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
+            background: #e8f4fd;
+            color: #2471a3;
+            margin: 1px 2px;
+            white-space: nowrap;
+        }
+        .tech-tag.ai { background: #fde8f4; color: #c0392b; }
+        .tech-tag.hw { background: #e8fde8; color: #1e8449; }
+        .tech-tag.sw { background: #f3e8fd; color: #6c3483; }
+
+        /* ===== Stats Bar ===== */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .stat-card .stat-num {
+            font-size: 36px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-card .stat-label {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Filter Buttons ===== */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: white;
+            color: var(--text);
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* ===== Timeline ===== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent), var(--primary));
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+            padding: 18px 24px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid var(--border);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 24px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--accent);
+        }
+        .timeline-item .year {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+        .timeline-item h4 {
+            font-size: 15px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+        .timeline-item p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        .status-done {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            background: #27ae6022;
+            color: #27ae60;
+            font-weight: 600;
+        }
+        .status-progress {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 11px;
+            background: #f39c1222;
+            color: #f39c12;
+            font-weight: 600;
+        }
+
+        /* ===== Policy Links ===== */
+        .policy-ref a {
+            color: var(--info);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--info);
+            font-size: 13px;
+            transition: all 0.2s;
+            word-break: break-all;
+        }
+        .policy-ref a:hover {
+            color: var(--primary);
+            border-bottom-style: solid;
+        }
+        .policy-card a {
+            color: var(--info);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--info);
+            transition: all 0.2s;
+        }
+        .policy-card a:hover {
+            color: var(--primary);
+            border-bottom-style: solid;
+        }
+        .ext-icon {
+            display: inline-block;
+            font-size: 10px;
+            margin-left: 2px;
+            opacity: 0.6;
+        }
+
+        /* ===== Roadmap ===== */
+        .roadmap {
+            margin-top: 24px;
+        }
+        .roadmap-quarter {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 14px;
+            align-items: flex-start;
+        }
+        .roadmap-label {
+            min-width: 72px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            padding-top: 6px;
+            text-align: center;
+            background: white;
+            border-radius: 8px;
+            padding: 8px 4px;
+            border: 1px solid var(--border);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .roadmap-items {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .roadmap-item {
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid;
+            line-height: 1.5;
+            max-width: 280px;
+        }
+        .roadmap-item.national { background: #fde8e811; border-color: #e74c3c44; color: #c0392b; }
+        .roadmap-item.province { background: #e8f0fe11; border-color: #3498db44; color: #2471a3; }
+        .roadmap-item.city { background: #e8f8e811; border-color: #27ae6044; color: #1e8449; }
+        .roadmap-item.district { background: #f3e8fd11; border-color: #8e44ad44; color: #6c3483; }
+
+        /* ===== Unit Summary ===== */
+        .unit-summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+            margin-top: 20px;
+        }
+        .unit-card {
+            background: white;
+            border-radius: 10px;
+            padding: 18px 20px;
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .unit-card .unit-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        .unit-card .unit-count {
+            font-size: 24px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .unit-card .unit-desc {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        /* ===== Lifecycle Bar (固定板块) ===== */
+        .lifecycle-bar {
+            margin-top: 20px;
+            padding: 20px 24px;
+            background: #f8f9fc;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+        .lifecycle-bar h4 {
+            font-size: 14px;
+            color: var(--primary);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .lifecycle-steps {
+            display: flex;
+            gap: 0;
+            position: relative;
+        }
+        .lifecycle-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            padding: 0 4px;
+        }
+        .lifecycle-step .bar {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .lifecycle-step:nth-child(1) .bar { background: #3498db; }
+        .lifecycle-step:nth-child(2) .bar { background: #9b59b6; }
+        .lifecycle-step:nth-child(3) .bar { background: #27ae60; }
+        .lifecycle-step:nth-child(4) .bar { background: #e74c3c; }
+        .lifecycle-step .step-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 2px;
+        }
+        .lifecycle-step .step-pct {
+            font-size: 18px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ===== Contact Bar (固定板块) ===== */
+        .contact-bar {
+            margin-top: 20px;
+            padding: 16px 28px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .contact-bar-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            white-space: nowrap;
+            padding-right: 12px;
+            border-right: 2px solid var(--border);
+        }
+        .contact-bar-name {
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+        .contact-bar-info {
+            font-size: 13px;
+            color: var(--text);
+        }
+        .contact-bar-info .cb-label {
+            color: var(--text-light);
+            margin-right: 4px;
+        }
+        .contact-bar-info a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+        }
+        .contact-bar-info a:hover {
+            color: var(--accent);
+        }
+        .contact-bar-sep {
+            width: 1px;
+            height: 28px;
+            background: var(--border);
+        }
+
+        /* ===== V2: Collapse Sections (企业背景折叠面板) ===== */
+        .collapse-group {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 2px dashed var(--border);
+        }
+        .collapse-group-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 16px;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .collapse-section {
+            margin-bottom: 12px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--card-bg);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+        }
+        .collapse-section summary {
+            padding: 18px 28px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            list-style: none;
+            border-left: 4px solid var(--accent);
+            transition: background 0.2s;
+        }
+        .collapse-section summary::-webkit-details-marker { display: none; }
+        .collapse-section summary:hover { background: #f8f9fc; }
+        .collapse-section summary::before {
+            content: '\25B6';
+            font-size: 12px;
+            color: var(--accent);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .collapse-section[open] summary::before { transform: rotate(90deg); }
+        .collapse-section[open] summary {
+            border-bottom: 1px solid var(--border);
+            background: #f8f9fc;
+        }
+        .collapse-section .collapse-body {
+            padding: 24px 28px;
+            animation: fadeSlideIn 0.3s ease;
+        }
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+        }
+
+        /* ===== Print ===== */
+        @media print {
+            .header, .nav, .filter-bar { position: static; }
+            .section { page-break-inside: avoid; }
+            .collapse-section { break-inside: avoid; }
+            .collapse-section[open] summary { break-after: avoid; }
+        }
+
+        /* ===== Responsive ===== */
+        @media (max-width: 768px) {
+            .container { padding: 16px; }
+            .header-inner { padding: 16px; flex-direction: column; gap: 8px; }
+            .nav-inner { padding: 0 16px; }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .info-grid { grid-template-columns: 1fr; }
+            .contact-bar { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .contact-bar-sep { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== Header + Nav (V2 导航顺序：项目优先) ===== -->
+<div class="header">
+    <div class="header-inner">
+        <h1>山西永鑫能源集团有限公司 <span>2026年度奖补项目申报清单</span></h1>
+        <div class="header-meta">编制日期：2026年6月15日 &nbsp;|&nbsp; 煤焦化电全产业链企业</div>
+    </div>
+    <div class="nav">
+        <div class="nav-inner">
+            <a href="#projects" class="active">可申报项目清单</a>
+            <a href="#policy">政策依据</a>
+            <a href="#tips">重要提示</a>
+            <a href="#company">企业详情 &#9660;</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- ===== 1. 可申报项目清单（首屏第一板块） ===== -->
+    <div class="section" id="projects">
+        <div class="section-title">
+            <div class="icon">1</div>
+            2026年可申报奖补项目清单
+        </div>
+
+        <!-- 统计摘要 -->
+        <div class="stats-bar">
+            <div class="stat-card">
+                <div class="stat-num">12</div>
+                <div class="stat-label">可申报项目总数</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">~2,500+</div>
+                <div class="stat-label">预计奖补总额（万元）</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">5</div>
+                <div class="stat-label">国家级项目</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-num">7</div>
+                <div class="stat-label">省/市级项目</div>
+            </div>
+        </div>
+
+        <!-- 层级筛选 -->
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterTable('all')">全部</button>
+            <button class="filter-btn" onclick="filterTable('national')">国家级</button>
+            <button class="filter-btn" onclick="filterTable('province')">省级</button>
+            <button class="filter-btn" onclick="filterTable('city')">市级</button>
+        </div>
+
+        <!-- 数据表格 -->
+        <div class="table-wrapper">
+            <table id="projectTable">
+                <thead>
+                    <tr>
+                        <th style="width:40px">序号</th>
+                        <th style="min-width:180px">可申报项目名称</th>
+                        <th style="min-width:100px">项目类别</th>
+                        <th style="min-width:110px">归口部门</th>
+                        <th style="min-width:80px">申报层级</th>
+                        <th style="min-width:80px">申报周期</th>
+                        <th style="min-width:100px">预计奖补金额（万元）</th>
+                        <th style="min-width:120px">关键技术方向</th>
+                        <th style="min-width:220px">申报核心条件</th>
+                        <th style="min-width:200px">所需材料</th>
+                        <th style="min-width:200px">政策依据（官方文件）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 国家级项目 -->
+                    <tr data-level="national">
+                        <td>1</td>
+                        <td><strong>专精特新"小巨人"企业</strong></td>
+                        <td><span class="category-tag">企业培育</span></td>
+                        <td>工信部</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>4-6月</td>
+                        <td class="amount">100-300</td>
+                        <td>
+                            <span class="tech-tag hw">焦化工艺优化</span>
+                            <span class="tech-tag sw">智能化工控系统</span>
+                        </td>
+                        <td>已认定为省级专精特新中小企业；营收≥5000万或主导产品国内市占率≥10%；研发费占比≥3%；至少2项发明专利</td>
+                        <td>企业基本情况表、上年度审计报告、研发费用专项审计报告、主导产品说明、知识产权证书</td>
+                        <td class="policy-ref"><a href="http://gxt.shanxi.gov.cn/xwdt/tzgg/202604/t20260401_10091434.shtml" target="_blank" rel="noopener">山西省工信厅《2026年度专精特新"小巨人"企业推荐和复核通知》<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="national">
+                        <td>2</td>
+                        <td><strong>制造业单项冠军企业</strong></td>
+                        <td><span class="category-tag">企业培育</span></td>
+                        <td>工信部</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>3-5月</td>
+                        <td class="amount">100-300</td>
+                        <td>
+                            <span class="tech-tag hw">冶金焦/化工焦</span>
+                            <span class="tech-tag sw">绿色制造体系</span>
+                        </td>
+                        <td>从事细分产品领域≥10年；产品国内市占率排名前3位；创新能力突出；已获省级单项冠军或专精特新"小巨人"认定</td>
+                        <td>单项冠军申报书、企业近3年财务数据、主导产品市场占有率证明、技术创新成果材料</td>
+                        <td class="policy-ref">工信部《制造业单项冠军企业认定管理办法》</td>
+                    </tr>
+                    <tr data-level="national">
+                        <td>3</td>
+                        <td><strong>智能工厂（卓越级/先进级）</strong></td>
+                        <td><span class="category-tag">智能制造</span></td>
+                        <td>工信部</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>3-4月</td>
+                        <td class="amount">200-500</td>
+                        <td>
+                            <span class="tech-tag ai">5G智能巡检</span>
+                            <span class="tech-tag sw">智慧化工平台</span>
+                            <span class="tech-tag hw">DCS控制系统</span>
+                        </td>
+                        <td>完成智能制造能力成熟度评估达二级及以上；已获评省级先进级智能工厂；具备人工智能技术应用场景</td>
+                        <td>智能工厂申报书、成熟度自评估报告、智能制造系统架构图、实施成效数据</td>
+                        <td class="policy-ref"><a href="https://zgq.shanxi.gov.cn/zwgk/tzgg/202603/t20260309_10076087.html" target="_blank" rel="noopener">山西省《2026年度智能工厂梯度培育工作通知》<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="national">
+                        <td>4</td>
+                        <td><strong>国家企业技术中心</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>国家发改委/科技部</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>9-11月</td>
+                        <td class="amount">200-500</td>
+                        <td>
+                            <span class="tech-tag hw">煤化工研发</span>
+                            <span class="tech-tag sw">工艺优化仿真</span>
+                        </td>
+                        <td>年营收≥15亿元；技术研发人员≥150人；年度研发费≥5000万元；拥有省级企业技术中心满2年；发明专利≥5项</td>
+                        <td>企业技术中心申请报告、企业财务报表、研发人员名单、知识产权清单、产学研合作协议</td>
+                        <td class="policy-ref">国家发改委《国家企业技术中心认定管理办法》</td>
+                    </tr>
+                    <tr data-level="national">
+                        <td>5</td>
+                        <td><strong>中央预算内投资-节能降碳专项</strong></td>
+                        <td><span class="category-tag">绿色制造</span></td>
+                        <td>国家发改委</td>
+                        <td><span class="level-tag level-national">国家级</span></td>
+                        <td>全年（核准制）</td>
+                        <td class="amount">500-1,000</td>
+                        <td>
+                            <span class="tech-tag hw">余热回收装置</span>
+                            <span class="tech-tag hw">干熄焦系统</span>
+                            <span class="tech-tag sw">能耗在线监测</span>
+                        </td>
+                        <td>项目已完成备案/核准；属于钢铁、焦化、化工等重点行业；节能量≥5000吨标准煤/年；总投资≥3000万元</td>
+                        <td>资金申请报告、项目备案/核准文件、节能评估报告、环评批复、用地预审意见</td>
+                        <td class="policy-ref">国家发改委《污染治理和节能减碳中央预算内投资专项管理办法》</td>
+                    </tr>
+
+                    <!-- 省级项目 -->
+                    <tr data-level="province">
+                        <td>6</td>
+                        <td><strong>山西省级绿色工厂</strong></td>
+                        <td><span class="category-tag">绿色制造</span></td>
+                        <td>山西省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>5-7月</td>
+                        <td class="amount">20-50</td>
+                        <td>
+                            <span class="tech-tag hw">焦炉分段加热</span>
+                            <span class="tech-tag sw">碳排放管理</span>
+                            <span class="tech-tag hw">废水处理回用</span>
+                        </td>
+                        <td>具有独立法人资格；符合绿色工厂评价标准（GB/T 36132）；近3年无重大安全环保事故；单位产值碳排放强度同比下降≥3%</td>
+                        <td>绿色工厂自评价报告、第三方评价报告、营业执照、环保验收文件、能源管理体系认证</td>
+                        <td class="policy-ref"><a href="https://www.hbzhan.com/news/detail/197972.html" target="_blank" rel="noopener">山西省工信厅《2026年度省级绿色工厂推荐工作通知》<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>7</td>
+                        <td><strong>山西省技术改造专项资金</strong></td>
+                        <td><span class="category-tag">技术改造</span></td>
+                        <td>山西省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>4-6月</td>
+                        <td class="amount">200-1,000</td>
+                        <td>
+                            <span class="tech-tag hw">焦化装备升级</span>
+                            <span class="tech-tag hw">6.78米焦炉</span>
+                            <span class="tech-tag sw">自动化控制</span>
+                        </td>
+                        <td>山西省内注册的独立法人企业；项目已完成备案；固定资产投资≥500万元；符合山西省产业政策和环保要求</td>
+                        <td>技改项目备案表、资金申请报告、项目环评批复、用地预审意见、银行贷款合同（贴息方式）</td>
+                        <td class="policy-ref"><a href="https://www.zhaoshang-gov.cn/news/2026-01-15/n1037847.html" target="_blank" rel="noopener">《山西省技术改造专项资金使用管理办法》（晋政办发〔2022〕72号）<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>8</td>
+                        <td><strong>山西省专精特新中小企业</strong></td>
+                        <td><span class="category-tag">企业培育</span></td>
+                        <td>山西省工信厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>4-6月</td>
+                        <td class="amount">20-50</td>
+                        <td>
+                            <span class="tech-tag hw">焦化深加工</span>
+                            <span class="tech-tag sw">化产品回收</span>
+                        </td>
+                        <td>已认定为创新型中小企业；上年度营收≥1500万元；研发人员占比≥15%；拥有至少2项与主营产品相关的发明专利</td>
+                        <td>专精特新中小企业申请表、企业财务报告、研发项目清单、知识产权证书、主导产品说明</td>
+                        <td class="policy-ref">《山西省"专精特新"中小企业认定管理办法》</td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>9</td>
+                        <td><strong>山西省企业研发费用补助</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>山西省科技厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>6-8月</td>
+                        <td class="amount">最高100</td>
+                        <td>
+                            <span class="tech-tag sw">煤化工技术研发</span>
+                            <span class="tech-tag ai">工艺优化AI</span>
+                        </td>
+                        <td>已建立研发准备金制度；上年度研发费用≥500万元；在山西省注册的居民企业；研发费用需经税务机关加计扣除确认</td>
+                        <td>研发准备金制度文件、研发费用专项审计报告、企业所得税年度纳税申报表、研发项目清单</td>
+                        <td class="policy-ref">山西省科技厅《2025年度建立研发准备金制度企业研发费用补助申报通知》</td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>10</td>
+                        <td><strong>高新技术企业认定</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>山西省科技厅</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>4-6月</td>
+                        <td class="amount">30</td>
+                        <td>
+                            <span class="tech-tag hw">焦化清洁生产</span>
+                            <span class="tech-tag sw">化产精深加工</span>
+                            <span class="tech-tag ai">智能配煤</span>
+                        </td>
+                        <td>在山西注册满1年的居民企业；核心知识产权≥1项发明专利或≥6项实用新型；高新技术产品收入占比≥60%；研发费占比≥3%-5%</td>
+                        <td>高新技术企业认定申请书、企业营业执照、知识产权证书、研发项目立项文件、科技成果转化材料</td>
+                        <td class="policy-ref"><a href="https://kjt.shanxi.gov.cn/xxgk/zfxxgkml/acs_11737/kjxmtctjc/202604/t20260410_10101593.shtml" target="_blank" rel="noopener">山西省科技厅《落实2025年度支持科技创新若干政策通知》<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                    <tr data-level="province">
+                        <td>11</td>
+                        <td><strong>山西省能源产供储销体系建设专项资金</strong></td>
+                        <td><span class="category-tag">技术改造</span></td>
+                        <td>山西省发改委</td>
+                        <td><span class="level-tag level-province">省级</span></td>
+                        <td>全年（核准制）</td>
+                        <td class="amount">最高1,000</td>
+                        <td>
+                            <span class="tech-tag hw">产能优化升级</span>
+                            <span class="tech-tag hw">LNG联产</span>
+                            <span class="tech-tag sw">安全储备平台</span>
+                        </td>
+                        <td>属于能源产供储销体系相关企业；项目已完成审批/核准/备案；支持比例不超核定投资额15%；单个项目不超1000万元</td>
+                        <td>专项资金申请报告、项目核准/备案文件、投资估算明细、环评批复、可行性研究报告</td>
+                        <td class="policy-ref">山西省发改委《加强能源产供储销体系建设专项资金管理办法》</td>
+                    </tr>
+
+                    <!-- 市级项目 -->
+                    <tr data-level="city">
+                        <td>12</td>
+                        <td><strong>临汾市科技创新奖补</strong></td>
+                        <td><span class="category-tag">科技创新</span></td>
+                        <td>临汾市科技局</td>
+                        <td><span class="level-tag level-city">市级</span></td>
+                        <td>4-6月</td>
+                        <td class="amount">10-50</td>
+                        <td>
+                            <span class="tech-tag hw">焦化技术创新</span>
+                            <span class="tech-tag sw">数字化管理</span>
+                        </td>
+                        <td>注册在临汾市的独立法人企业；获得省级以上科技创新认定或科技成果；近3年无重大安全质量事故或严重环境违法行为</td>
+                        <td>科技创新奖补申报表、相关认定证书、科技成果证明、企业财务报表</td>
+                        <td class="policy-ref"><a href="http://kjj.linfen.gov.cn/wjfg/tzgg/202604/t20260416_635805.html" target="_blank" rel="noopener">临汾市科技局《落实2025年度支持科技创新若干政策通知》<span class="ext-icon">&#8599;</span></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 申报规划路线图 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#128197; 申报规划路线图（按时间窗口）</h3>
+            <div class="roadmap">
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q1-Q2<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">3-6月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9312;</strong> 专精特新"小巨人"企业<br><span style="opacity:0.7">4-6月 | 工信部</span></div>
+                        <div class="roadmap-item national"><strong>&#9313;</strong> 制造业单项冠军<br><span style="opacity:0.7">3-5月 | 工信部</span></div>
+                        <div class="roadmap-item national"><strong>&#9314;</strong> 智能工厂（卓越/先进级）<br><span style="opacity:0.7">3-4月 | 工信部</span></div>
+                        <div class="roadmap-item province"><strong>&#9315;</strong> 省级技术改造专项资金<br><span style="opacity:0.7">4-6月 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9316;</strong> 省级专精特新中小企业<br><span style="opacity:0.7">4-6月 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9317;</strong> 高新技术企业认定<br><span style="opacity:0.7">4-6月 | 省科技厅</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q2-Q3<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">5-8月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item province"><strong>&#9318;</strong> 省级绿色工厂<br><span style="opacity:0.7">5-7月 | 省工信厅</span></div>
+                        <div class="roadmap-item province"><strong>&#9319;</strong> 企业研发费用补助<br><span style="opacity:0.7">6-8月 | 省科技厅</span></div>
+                        <div class="roadmap-item city"><strong>&#9320;</strong> 临汾市科技创新奖补<br><span style="opacity:0.7">4-6月 | 市科技局</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">Q3-Q4<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">9-12月</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9321;</strong> 国家企业技术中心<br><span style="opacity:0.7">9-11月 | 国家发改委</span></div>
+                    </div>
+                </div>
+                <div class="roadmap-quarter">
+                    <div class="roadmap-label">全年<br><span style="font-size:11px;font-weight:400;color:var(--text-light)">持续</span></div>
+                    <div class="roadmap-items">
+                        <div class="roadmap-item national"><strong>&#9322;</strong> 中央预算内节能降碳专项<br><span style="opacity:0.7">全年核准 | 国家发改委</span></div>
+                        <div class="roadmap-item province"><strong>&#9323;</strong> 能源产供储销体系专项资金<br><span style="opacity:0.7">全年核准 | 省发改委</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 归口部门项目分布 -->
+        <div style="margin-top: 30px;">
+            <h3 style="font-size: 17px; color: var(--primary); margin-bottom: 14px;">&#127970; 归口部门项目分布</h3>
+            <div class="unit-summary">
+                <div class="unit-card">
+                    <div class="unit-name">工信部</div>
+                    <div class="unit-count">3</div>
+                    <div class="unit-desc">小巨人 / 单项冠军 / 智能工厂</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">国家发改委/科技部</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">企业技术中心 / 节能降碳专项</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">山西省工信厅</div>
+                    <div class="unit-count">3</div>
+                    <div class="unit-desc">绿色工厂 / 技改资金 / 专精特新</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">山西省科技厅</div>
+                    <div class="unit-count">2</div>
+                    <div class="unit-desc">研发费补助 / 高企认定</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">山西省发改委</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">能源产供储销专项资金</div>
+                </div>
+                <div class="unit-card">
+                    <div class="unit-name">临汾市科技局</div>
+                    <div class="unit-count">1</div>
+                    <div class="unit-desc">科技创新奖补</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 2. 政策依据汇总 ===== -->
+    <div class="section" id="policy">
+        <div class="section-title">
+            <div class="icon">2</div>
+            政策依据汇总
+        </div>
+
+        <!-- 国家级 -->
+        <div class="card policy-card">
+            <h3>国家级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> 工信部《优质中小企业梯度培育管理暂行办法》（工信部企业〔2022〕63号）
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> 工信部《制造业单项冠军企业认定管理办法》
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="https://zgq.shanxi.gov.cn/zwgk/tzgg/202603/t20260309_10076087.html" target="_blank" rel="noopener">《智能工厂梯度培育管理办法（暂行）》（工信部联通装〔2025〕262号）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> 国家发改委《国家企业技术中心认定管理办法》
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>5.</strong> 国家发改委《污染治理和节能减碳中央预算内投资专项管理办法》
+                </div>
+            </div>
+        </div>
+
+        <!-- 省级 -->
+        <div class="card policy-card">
+            <h3>山西省级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="https://www.hbzhan.com/news/detail/197972.html" target="_blank" rel="noopener">山西省工信厅《关于开展2026年度省级绿色工厂推荐工作的通知》<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="https://www.zhaoshang-gov.cn/news/2026-01-15/n1037847.html" target="_blank" rel="noopener">《山西省技术改造专项资金使用管理办法》（晋政办发〔2022〕72号）<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>3.</strong> <a href="http://gxt.shanxi.gov.cn/xwdt/tzgg/202604/t20260401_10091434.shtml" target="_blank" rel="noopener">山西省工信厅《关于开展2026年度专精特新"小巨人"企业推荐和复核工作的通知》<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>4.</strong> <a href="https://kjt.shanxi.gov.cn/xxgk/zfxxgkml/acs_11737/kjxmtctjc/202604/t20260410_10101593.shtml" target="_blank" rel="noopener">山西省科技厅《关于落实2025年度支持科技创新若干政策的通知》<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>5.</strong> 山西省发改委《加强能源产供储销体系建设专项资金管理办法》
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>6.</strong> 《山西省"专精特新"中小企业认定管理办法》
+                </div>
+            </div>
+        </div>
+
+        <!-- 市级 -->
+        <div class="card policy-card">
+            <h3>临汾市级政策文件</h3>
+            <div style="margin-top: 12px; font-size: 14px; line-height: 2.2;">
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>1.</strong> <a href="http://kjj.linfen.gov.cn/wjfg/tzgg/202604/t20260416_635805.html" target="_blank" rel="noopener">临汾市科技局《关于落实2025年度支持科技创新若干政策的通知》<span class="ext-icon">&#8599;</span></a>
+                </div>
+                <div style="padding: 8px 12px; background: #fafafa; border-radius: 6px; margin-bottom: 8px;">
+                    <strong>2.</strong> <a href="http://www.linfen.gov.cn/wj/qtlwj/bgswj_10623/lzbf_10624/202511/t20251112_589642.html" target="_blank" rel="noopener">临汾市人民政府《"晋创谷&middot;临汾"创新驱动平台科技成果转化支持政策措施》<span class="ext-icon">&#8599;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 3. 重要提示 + 项目申报全生命周期（固定板块） ===== -->
+    <div class="section" id="tips">
+        <div class="card" style="background: #fffbeb; border-color: #f5deb3;">
+            <h3 style="color: #b8860b;">&#9888;&#65039; 重要提示</h3>
+            <p style="font-size: 13px; color: #8b7355; margin-top: 8px;">
+                本清单所列信息基于公开资料整理，仅供参考。具体申报条件、奖补金额和时间节点以各级主管部门发布的最新官方文件为准。建议企业密切关注山西省工信厅、科技厅、发改委以及临汾市科技局等部门的年度申报通知，提前做好材料准备。预计奖补金额可能因政策调整而变化，部分项目奖补金额需根据实际投资额计算。
+            </p>
+            <!-- ▼▼▼ 固定板块：项目申报全生命周期 —— 以下内容所有企业完全一致，不可修改 ▼▼▼ -->
+            <div class="lifecycle-bar">
+                <h4>&#128203; 项目申报全生命周期</h4>
+                <div class="lifecycle-steps">
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">项目申报</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">评审批复</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step">
+                        <div class="bar"></div>
+                        <div class="step-label">资金下达</div>
+                        <div class="step-pct">20%</div>
+                    </div>
+                    <div class="lifecycle-step" style="flex: 2;">
+                        <div class="bar"></div>
+                        <div class="step-label">结项验收</div>
+                        <div class="step-pct">40%</div>
+                    </div>
+                </div>
+            </div>
+            <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+        </div>
+
+        <!-- ▼▼▼ 固定板块：项目咨询联系人 —— 以下内容所有企业完全一致，不可修改 ▼▼▼ -->
+        <div class="contact-bar">
+            <div class="contact-bar-title">&#128222; 项目咨询联系人</div>
+            <div class="contact-bar-name">赵璐红</div>
+            <div class="contact-bar-info">
+                <span class="cb-label">舍得酒业</span> &middot; 公共事务部总经理
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">电话</span> <a href="tel:18884606786">18884606786</a>
+            </div>
+            <div class="contact-bar-sep"></div>
+            <div class="contact-bar-info">
+                <span class="cb-label">地址</span> 四川省成都市武侯区复地复城国际T1
+            </div>
+        </div>
+        <!-- ▲▲▲ 固定板块结束 ▲▲▲ -->
+    </div>
+
+    <!-- ═══ 折叠面板区域：企业背景信息，点击展开 ═══ -->
+
+    <div class="collapse-group" id="company">
+        <div class="collapse-group-title">&#9660; 企业详情（点击展开） &#9660;</div>
+
+        <!-- 企业概述（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127970; 企业概述</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>山西永鑫能源集团有限公司创建于2003年，集团总部位于山西省临汾市安泽经济技术开发区唐城工业园区，是一家集煤炭开采、炼焦、化产品回收与深加工、发电、新材料及新能源于一体的大型民营能源化工企业集团。集团总资产约71亿元，员工5,000余人，已形成原煤产能120万吨/年、焦化产能450万吨/年、年发电量12亿度的完整煤焦化电全产业链布局。集团旗下子公司山西永鑫煤焦化有限责任公司于2020年入选国家级绿色工厂，是山西省唯一获此殊荣的独立焦化企业。集团始终坚持绿色发展理念，积极拥抱5G、人工智能等新技术，推动传统能源产业向智能化、绿色化方向转型升级。</p>
+                </div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="label">企业全称</div>
+                        <div class="value">山西永鑫能源集团有限公司</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">创建年份</div>
+                        <div class="value">2003年（集团注册2021年）</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">注册地址</div>
+                        <div class="value">山西省临汾市安泽经济技术开发区唐城工业园区</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">法定代表人</div>
+                        <div class="value">梁鹏</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">员工规模</div>
+                        <div class="value">5,000余人</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">总资产</div>
+                        <div class="value">约71亿元</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">企业性质</div>
+                        <div class="value">民营企业</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="label">所属行业</div>
+                        <div class="value">煤化工/能源化工</div>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 主营业务（折叠） -->
+        <details class="collapse-section">
+            <summary>&#9881; 主营业务</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <p>永鑫集团以"煤-焦-化-电-新材料-新能源"全产业链为核心布局，涵盖煤炭洗选、炼焦（冶金焦/化工焦）、化产品回收与深加工（焦油/粗苯/硫铵/甲醇/LNG等）、余热发电、新型材料研发生产等多个业务板块。集团通过循环经济模式实现资源高效利用，焦化副产品全部实现回收再利用，形成了完整的"煤炭-焦化-化工-电力-新材料"产业闭环。旗下圣鑫焦化建设有160万吨/年焦化及LNG联产项目，采用焦炉分段加热、余热回收等先进节能技术，吨焦能耗仅105kgce，达到行业领先水平。</p>
+                </div>
+                <div class="biz-grid">
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8f4fd;">&#9935;</div>
+                        <h4>煤炭开采与洗选</h4>
+                        <p>年原煤产能120万吨，配套现代化洗煤设施，为焦化生产提供优质原料保障</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fde8e8;">&#128293;</div>
+                        <h4>炼焦与化产加工</h4>
+                        <p>年焦化产能450万吨，采用先进6.78米捣固焦炉技术，配套化产品回收与深加工系统</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e8fde8;">&#9889;</div>
+                        <h4>余热发电</h4>
+                        <p>利用焦炉余热及干熄焦余热发电，年发电量12亿度，实现能源梯级利用</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #f3e8fd;">&#129514;</div>
+                        <h4>化工深加工</h4>
+                        <p>焦炉煤气制甲醇、LNG联产，焦油深加工、粗苯精制等高附加值化工产品</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #fff8e1;">&#129302;</div>
+                        <h4>智能化建设</h4>
+                        <p>5G机器人智能安全巡检、智慧化工厂数字平台、DCS自动化控制系统等</p>
+                    </div>
+                    <div class="biz-card">
+                        <div class="biz-icon" style="background: #e1f5fe;">&#127793;</div>
+                        <h4>绿色制造</h4>
+                        <p>超低排放改造、废水零排放、烟气脱硫脱硝，打造花园式绿色工厂</p>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 资质与荣誉（折叠） -->
+        <details class="collapse-section">
+            <summary>&#127942; 已获得的资质与荣誉</summary>
+            <div class="collapse-body">
+                <div class="card">
+                    <h3>国家级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-national">&#127942; 国家级绿色工厂（2020年，子公司永鑫煤焦化，山西唯一独立焦化企业）</span>
+                        <span class="badge badge-national">&#127941; 抗击新冠肺炎疫情先进民营企业</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>省市级资质与荣誉</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-province">&#127941; 山西省百家诚信入围企业</span>
+                        <span class="badge badge-province">&#127941; 山西省环保绩效先进企业</span>
+                        <span class="badge badge-province">&#127941; ISO9001质量管理体系认证</span>
+                        <span class="badge badge-province">&#127941; 职业健康安全管理体系认证</span>
+                        <span class="badge badge-city">&#127941; 临汾市安全生产许可企业</span>
+                        <span class="badge badge-city">&#127941; 安泽县重点骨干企业</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>其他资质</h3>
+                    <div class="badge-group">
+                        <span class="badge badge-other">&#128220; 安全生产许可证</span>
+                        <span class="badge badge-other">&#128220; 排污许可证</span>
+                        <span class="badge badge-other">&#128220; 工业产品生产许可证</span>
+                    </div>
+                </div>
+            </div>
+        </details>
+
+        <!-- 近三年项目申请（折叠） -->
+        <details class="collapse-section">
+            <summary>&#128203; 近三年项目申请情况（2024-2026）</summary>
+            <div class="collapse-body">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2026年</div>
+                        <h4>圣鑫焦化智慧化工厂数字平台项目</h4>
+                        <p>建设智慧化工厂数字平台，涵盖生产管理、安全监控、环保监测、能源管理四大板块，推动生产全流程智能化管理 <span class="status-progress">推进中</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2025年</div>
+                        <h4>圣鑫焦化160万吨/年焦化及LNG联产项目</h4>
+                        <p>采用焦炉分段加热、余热回收等先进节能技术，吨焦能耗105kgce，实现绿色高效生产 <span class="status-done">已投产</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2025年</div>
+                        <h4>5G机器人智能安全巡检项目</h4>
+                        <p>利用5G通信技术实现焦炉炉底无间歇智能巡检和有毒有害气体实时监测 <span class="status-done">已投用</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>超低排放改造项目</h4>
+                        <p>完成烟气脱硫脱硝、废水深度处理等环保设施升级改造，实现超低排放 <span class="status-done">已完成</span></p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2024年</div>
+                        <h4>干熄焦余热发电系统升级</h4>
+                        <p>升级干熄焦余热回收系统，提升发电效率，年新增发电量约2亿度 <span class="status-done">已完成</span></p>
+                    </div>
+                </div>
+            </div>
+        </details>
+    </div>
+
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+    山西永鑫能源集团有限公司 &middot; 2026年度奖补项目申报清单 &middot; 仅供内部参考使用 &middot; 编制日期：2026年6月15日
+</div>
+
+<!-- ===== JavaScript ===== -->
+<script>
+    // 1. 导航平滑滚动 + 激活态切换
+    document.querySelectorAll('.nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.nav a').forEach(a => a.classList.remove('active'));
+            this.classList.add('active');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // 2. 表格层级筛选
+    function filterTable(level) {
+        const rows = document.querySelectorAll('#projectTable tbody tr');
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+        rows.forEach(row => {
+            if (level === 'all' || row.dataset.level === level) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    }
+
+    // 3. 滚动监听 (Scroll Spy) - V2 适配新板块顺序
+    window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('.section, .collapse-group');
+        const navLinks = document.querySelectorAll('.nav a');
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 140;
+            if (window.scrollY >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // 4. 折叠面板：点击"企业详情"导航自动展开所有折叠面板
+    document.querySelector('.nav a[href="#company"]').addEventListener('click', function() {
+        setTimeout(() => {
+            document.querySelectorAll('.collapse-section').forEach(d => d.open = true);
+        }, 400);
+    });
+</script>
+
+</body>
+</html>
